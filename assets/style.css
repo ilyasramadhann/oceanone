@@ -197,7 +197,7 @@ nav span{
     max-height: fit-content;
 }
 footer {
-    background-color: #06bee1;
+    background-color: #03246cfa;
 }
 footer .d-flex{
     flex-direction: column;
@@ -379,7 +379,7 @@ footer .col a{
         max-height: fit-content;
     }
     footer {
-        background-color: #06bee1;
+        background-color: #03246cfa;
     }
     footer .col{
         align-self: center;
