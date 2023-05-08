@@ -402,3 +402,9 @@ footer .col a{
         flex-direction: row;
     }
 }
+
+@media ((min-width: 992px) and (max-width: 1200px)) {
+    .section-2 .kickstart a{
+        margin-top: 25px;
+    }
+}
