@@ -53,7 +53,7 @@
         <div class="container">
             <h1 class="display-5 fw-bold">Act Against Plastic Pollution</h1>
             <p>Don't Let Our Oceans Drown in Plastic Waste.<br>Join the Fight for a Cleaner Tomorrow</p>
-            <button class="btn btn-primary btn-md" type="button">TAKE ACTION</button>
+            <button class="btn btn-primary btn-md" onclick="alert('Taking Action!')" type="button">TAKE ACTION</button>
         </div>
     </div>
     <!-- Section 2 -->
@@ -62,14 +62,15 @@
         <div class="row g-4 row-cols-1 row-cols-lg-3">
           <div class="d-flex flex-column bd-highlight">
             <h4 class="title">ALIGN</h4>
-            <p>66% of people (73% of Millennials) are willing to pay more for products and services from companies committed to positive social and environmental impact.</p>
-            <div class="d-flex justify-content-end">
+            <p id="p-display">66% of people (73% of Millennials) are willing to pay more for products and services from companies committed to positive social and environmental impact.</p>
+            <div class="d-flex justify-content-between">
+                <a class="btn btn-primary btn-md" href="#featured-3" onclick="changeDisplay()">EDIT</a>
                 <a class="btn btn-primary btn-md" href="#">LEARN MORE</a>
             </div>
           </div>
           <div class="d-flex flex-column bd-highlight kickstart">
             <h4 class="title">KICKSTART</h4>
-            <p>Ocean One are a turnkey solution to begin the journey of reducing your business's environmental footprint or going plastic neutral.</p>
+            <p id="kickstart">Ocean One are a turnkey solution to begin the journey of reducing your business's environmental footprint or going plastic neutral.</p>
             <div class="d-flex justify-content-end">
                 <a class="btn btn-primary btn-md" href="#">START ACTION</a>
             </div>
@@ -160,12 +161,17 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.1738741194085!2d110.37492487390165!3d-7.77137937708817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59b2d4729729%3A0xac4d7b5fcf34f8e4!2sUniversitas%20Gadjah%20Mada!5e0!3m2!1sid!2sid!4v1683216072382!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="flex-fill" id="box">
-                <form action="#">
+                <form onsubmit="return false">
                     <div class="form-group">
-                        <input class="name form-control" type="text" placeholder="Name">
-                        <input class="email form-control" type="email" placeholder="Email">
-                        <textarea class="message form-control" type="text" rows="3" placeholder="Write Your Message Here ..."></textarea>
-                        <button type="submit" class="btn btn-primary">SEND</button>
+                        <input class="name form-control" type="text" placeholder="Name" id="name">
+                        <input class="email form-control" type="email" placeholder="Email" id="email">
+                        <textarea class="message form-control" type="text" rows="3" id="message" placeholder="Write Your Message Here ..."></textarea>
+                        <button type="submit" class="btn btn-primary" onclick="printOutput()">SEND</button>
+
+                        <h4><span id="caption"></span></h4>
+                        <div class="hasil"><span id="hasil-name"></span><span class="span" id="sname"></span></div>
+                        <div class="hasil"><span id="hasil-email"></span><span class="span" id="semail"></span></div>
+                        <div class="hasil"><span id="hasil-message"></span><span class="span" id="smessage"></span></div>
                     </div>
                 </form>
             </div>

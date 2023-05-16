@@ -88,6 +88,9 @@ nav span{
     width: 160px;
     border-radius: 30px;
 }
+.section-2 textarea{
+    width: max-content;
+}
 .section-3{
     padding-top: 100px;
     padding-bottom: 110px;
@@ -132,7 +135,6 @@ nav span{
 }
 .section-4 #box{
     width: 50%;
-    height: auto;
 }
 .section-4 h6{
     font-family: 'Red Hat Text';
@@ -223,6 +225,20 @@ footer .col a{
     font-family: 'Viga';
     color: #ffffff;
     text-decoration: none;
+}
+.section-5 h4{
+    margin-top: 25px;
+    font-family: "Rosario";
+    font-weight: 600;
+    color: #06bee1;
+}
+.span{
+    font-weight: bold;
+}
+.section-5 .hasil{
+    margin: 10px 0;
+    font-family: "Red Hat Text";
+    font-size: medium;
 }
 
 @media (min-width: 992px) {
