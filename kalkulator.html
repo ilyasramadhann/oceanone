@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        body{
+            font-family: "Roboto";
+        }
+        .calculator{
+            background-color: #F3FBFA;
+            padding-bottom: 10px;
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .title{
+            text-align: center;
+            padding-top: 50px;
+            margin-bottom: 20px;
+        }
+        table{
+            align-self: center;
+            border: none;
+            width: 300px;
+        }
+        table input{
+            width: 50px;
+            border: none;
+        }
+        .jenis{
+            width: 100px;
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .main-table .type{
+            width: 200px;
+            text-align: left;
+        }
+        table .type{
+            text-align: left;
+            padding: 7px 0;
+            font-weight: 600;
+        }
+        table input{
+            text-align: left;
+        }
+        .main-table td{
+            margin-bottom: 10px;
+        }
+        .day {
+            font-size: 14px;
+            color: grey;
+        }
+        .year{
+            font-size: 14px;
+            color: grey;
+        }
+        .total{
+            margin-top: 40px;
+        }
+        h4{
+            color: #DF6D30;
+        }
+        #total{
+            font-weight: 900;
+            color: #DF6D30;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="container title">
+            <h4>ITEMS YOU CONSUME DAILY</h4>
+            <p>Please enter the quantity for <b>each day:</b></p>
+        </div>
+        <div class="container">
+            <table class="main-table">
+                <tr>
+                    <td class="type"></td>
+                    <td class="day">DAY</td>
+                    <td class="year">YEAR</td>
+                </tr>
+                <tr>
+                    <td class="type">Plastic Bottles</td>
+                    <td><input id="input1" min="0" type="number" onkeyup="calculateTotal('input1','output1', output1)"></td>
+                    <td><span id="output1"></span></td>
+                </tr>
+                <tr>
+                    <td class="type">Plastic Cups</td>
+                    <td><input id="input2" min="0" type="number" onkeyup="calculateTotal('input2','output2', output2)"></td>
+                    <td><span id="output2"></span></td>
+                </tr>
+                <tr>
+                    <td class="type">Straws</td>
+                    <td><input id="input3" min="0" type="number" onkeyup="calculateTotal('input3','output3', output3)"></td>
+                    <td><span id="output3"></span></td>
+                </tr>
+                <tr>
+                    <td class="type">Cotton Swabs</td>
+                    <td><input id="input4" min="0" type="number" onkeyup="calculateTotal('input4','output4', output4)"></td>
+                    <td><span id="output4"></span></td>
+                </tr>
+                <tr>
+                    <td class="type">Cigarette Butts</td>
+                    <td><input id="input5" min="0" type="number" onkeyup="calculateTotal('input5','output5', output5)"></td>
+                    <td><span id="output5"></span></td>
+                </tr>
+                <tr>
+                    <td class="type">Plastic Resealable Bags</td>
+                    <td><input id="input6" min="0" type="number" onkeyup="calculateTotal('input6','output6', output6)"></td>
+                    <td><span id="output6"></span></td>
+                </tr>
+                <tr>
+                    <td class="type">Plastic Cling Wrap</td>
+                    <td><input id="input7" min="0" type="number" onkeyup="calculateTotal('input7','output7', output7)"></td>
+                    <td><span id="output7"></span></td>
+                </tr>
+                <tr>
+                    <td class="type">Plastic Silverware</td>
+                    <td><input id="input8" min="0" type="number" onkeyup="calculateTotal('input8','output8', output8)"></td>
+                    <td><span id="output8"></span></td>
+                </tr>
+                <tr>
+                    <td class="type">Plastic Stirrers</td>
+                    <td><input id="input9" min="0" type="number" onkeyup="calculateTotal('input9','output9', output9)"></td>
+                    <td><span id="output9"></span></td>
+                </tr>
+                <tr>
+                    <td class="type">Food Containers</td>
+                    <td><input id="input10" min="0" type="number" onkeyup="calculateTotal('input10','output10', output10)"></td>
+                    <td><span id="output10"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        <table class="total">
+            <tr>
+                <td class="type">Current Yearly Consumption</td>
+                <td><span id="total"></span></td>
+            </tr>
+        </table>
+
+    <script>
+            function calculateTotal(input, output, variabel) {
+            if (document.getElementById(input).value<0) {
+                document.getElementById(output).innerHTML = 0
+            } else {
+                total = 325 * Number(document.getElementById(input).value);
+                document.getElementById(output).innerHTML = total;
+
+                var output1 = Number(document.getElementById("output1").innerHTML);
+                var output2 = Number(document.getElementById("output2").innerHTML);
+                var output3 = Number(document.getElementById("output3").innerHTML);
+                var output4 = Number(document.getElementById("output4").innerHTML);
+                var output5 = Number(document.getElementById("output5").innerHTML);
+                var output6 = Number(document.getElementById("output6").innerHTML);
+                var output7 = Number(document.getElementById("output7").innerHTML);
+                var output8 = Number(document.getElementById("output8").innerHTML);
+                var output9 = Number(document.getElementById("output9").innerHTML);
+                var output10 = Number(document.getElementById("output10").innerHTML);
+
+                var jumlah = output1+output2+output3+output4+output5+output6+output7+output8+output9+output10;
+                document.getElementById("total").innerText = jumlah;
+            }
+        }
+    </script>
+</body>
+</html>
