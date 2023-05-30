@@ -108,45 +108,125 @@
 
     <!-- Section 4 -->
     <div class="section-4">
-        <h6 class="top">PROJECT 1:</h6>
-        <h2>OCEANBOUND CLEAN UP</h2>
+        <?php
+        include 'conn.php';
+        $data = mysqli_query($conn, "select id, judul, subjudul from title_section");
+        foreach ($data as $value) {
+            if ($value['id']==1) {
+                echo "<h6>".$value['judul']."</h6>";
+                echo "<h2>".$value['subjudul']."</h2>";
+            }
+        }
+        ?>
         <div class="d-flex bd-highlight align-items-center" id="section-4">
             <div class="flex-fill" id="box">
-                <img src="assets/1.jpg" alt="">
+                <?php
+                include 'conn.php';
+                $data = mysqli_query($conn, "select id, gambar from ocean_one");
+                foreach ($data as $value) {
+                    if ($value['id']==1) {
+                        echo "<img src='data:image/jpg;base64," . base64_encode($value['gambar']) . "' alt='Gambar'>";
+                    }
+                }
+                ?>
             </div>
             <div class="left flex-fill" id="box">
-                <h4>PROBLEMS</h4>
-                <p>Plastic recycling generates plastic waste effluent as a standard part of the process. This dirty discharge known as "Mud" is at risk of being discharged into the wastewater and, in the best-case, is usually taken to the nearest landfill.</p>
+                <?php
+                include 'conn.php';
+                $data = mysqli_query($conn, "select id, judul, deskripsi from ocean_one");
+                foreach ($data as $value) {
+                    if ($value['id']==1) {
+                        echo "<h4>".$value['judul']."</h4>";
+                        echo "<p>".$value['deskripsi']."</p>";
+                    }
+                }
+                ?>
             </div>
         </div>
         <div class="d-flex bd-highlight align-items-center" id="section-4">
             <div class="right flex-fill" id="box">
-                <h4>SOLUTION</h4>
-                <p>Repurposes the “Mud” into useful building materials. It's composition is perfect for producing bricks! Unfortunately, these recycled plastic compound bricks are slightly more expensive than standard building bricks, so Impac+ program incentivizes the reuse of the “Mud” in the bricks by making them competitive on the open market.</p>
+                <?php
+                include 'conn.php';
+                $data = mysqli_query($conn, "select id, judul, deskripsi from ocean_one");
+                foreach ($data as $value) {
+                    if ($value['id']==2) {
+                        echo "<h4>".$value['judul']."</h4>";
+                        echo "<p>".$value['deskripsi']."</p>";
+                    }
+                }
+                ?>
             </div>
             <div class="flex-fill" id="box">
-                <img src="assets/2.jpg" alt="">
+                <?php
+                include 'conn.php';
+                $data = mysqli_query($conn, "select id, gambar from ocean_one");
+                foreach ($data as $value) {
+                    if ($value['id']==2) {
+                        echo "<img src='data:image/jpg;base64," . base64_encode($value['gambar']) . "' alt='Gambar'>";
+                    }
+                }
+                ?>
             </div>
         </div>
 
-        <h6>PROJECT 2:</h6>
-        <h2>FISHING NET RECOVERY</h2>
+        <?php
+        include 'conn.php';
+        $data = mysqli_query($conn, "select id, judul, subjudul from title_section");
+        foreach ($data as $value) {
+            if ($value['id']==2) {
+                echo "<h6>".$value['judul']."</h6>";
+                echo "<h2>".$value['subjudul']."</h2>";
+            }
+        }
+        ?>
         <div class="d-flex bd-highlight align-items-center" id="section-4">
-            <div class="flex-fill" id="box">
-                <img src="assets/3.jpg" alt="">
+        <div class="flex-fill" id="box">
+                <?php
+                include 'conn.php';
+                $data = mysqli_query($conn, "select id, gambar from ocean_one");
+                foreach ($data as $value) {
+                    if ($value['id']==3) {
+                        echo "<img src='data:image/jpg;base64," . base64_encode($value['gambar']) . "' alt='Gambar'>";
+                    }
+                }
+                ?>
             </div>
             <div class="left flex-fill" id="box">
-                <h4>PROBLEMS</h4>
-                <p>Fishing gear - nets and ropes - pose a significant risk to sea life if cut away in the ocean. Unfortunately, incentives do not exist to recover this gear so at the end of its life, most gets landfilled or simply cut away at sea. It's a huge reason for why fishing nets are the largest ocean plastic polluter.</p>
+                <?php
+                include 'conn.php';
+                $data = mysqli_query($conn, "select id, judul, deskripsi from ocean_one");
+                foreach ($data as $value) {
+                    if ($value['id']==3) {
+                        echo "<h4>".$value['judul']."</h4>";
+                        echo "<p>".$value['deskripsi']."</p>";
+                    }
+                }
+                ?>
             </div>
         </div>
         <div class="d-flex bd-highlight align-items-center" id="section-4">
             <div class="right flex-fill" id="box">
-                <h4>SOLUTION</h4>
-                <p>We provides the funds needed to incentivize collection and recycling of this gear. This program creates a pathway for the reclamation of end of life fishing gear.</p>
+                <?php
+                include 'conn.php';
+                $data = mysqli_query($conn, "select id, judul, deskripsi from ocean_one");
+                foreach ($data as $value) {
+                    if ($value['id']==4) {
+                        echo "<h4>".$value['judul']."</h4>";
+                        echo "<p>".$value['deskripsi']."</p>";
+                    }
+                }
+                ?>
             </div>
             <div class="flex-fill" id="box">
-                <img src="assets/4.jpg" alt="">
+                <?php
+                include 'conn.php';
+                $data = mysqli_query($conn, "select id, gambar from ocean_one");
+                foreach ($data as $value) {
+                    if ($value['id']==4) {
+                        echo "<img src='data:image/jpg;base64," . base64_encode($value['gambar']) . "' alt='Gambar'>";
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>
